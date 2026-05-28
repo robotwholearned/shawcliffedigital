@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shawcliffe Digital — Custom Branded Apps for Contractors</title>
+  <meta name="description" content="Shawcliffe Digital builds custom branded app systems for local contractors and owner operators — more leads, better follow-up, stronger reviews." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate-50:  #f8fafc;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-900: #0f172a;
+      --slate-950: #020617;
+      --blue-400:  #60a5fa;
+      --blue-700:  #1d4ed8;
+      --blue-800:  #1e40af;
+      --white:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--slate-950);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: inherit;
+      flex-shrink: 0;
+    }
+
+    .logo-words { line-height: 1; }
+
+    .logo-name {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--slate-950);
+    }
+
+    .logo-sub {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--blue-700);
+      margin-top: 0.2rem;
+    }
+
+    .header-nav {
+      display: none;
+      list-style: none;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) { .header-nav { display: flex; } }
+
+    .header-nav a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate-600);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .header-nav a:hover { color: var(--slate-950); }
+
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--slate-950);
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 0.6rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .btn-dark:hover { background: var(--blue-800); }
+
+    /* ─── HERO ─── */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        padding-top: 5rem;
+      }
+    }
+
+    /* Left card */
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: 2rem;
+      padding: 2.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-mark-large {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .logo-mark-name {
+      margin-top: 0.75rem;
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate-950);
+      line-height: 1;
+      text-align: center;
+    }
+
+    .logo-mark-sub {
+      margin-top: 0.75rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--blue-700);
+      text-align: center;
+    }
+
+    .card-divider {
+      width: 80%;
+      height: 1px;
+      background: var(--slate-200);
+      margin: 2.5rem auto;
+    }
+
+    .hero-tagline {
+      max-width: 320px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      line-height: 1.8;
+      color: var(--slate-950);
+    }
+
+    .hero-tagline .blue { color: var(--blue-700); }
+
+    .hero-vr { display: none; }
+
+    /* Right content */
+    .hero-content {}
+
+    @media (min-width: 1024px) { .hero-content { padding-left: 3rem; } }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--blue-700);
+    }
+
+    .hero-h1 {
+      margin-top: 1.25rem;
+      font-size: clamp(2.2rem, 4.5vw, 3.75rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      color: var(--slate-950);
+    }
+
+    .hero-p {
+      margin-top: 1.5rem;
+      max-width: 480px;
+      font-size: 1.1rem;
+      line-height: 2;
+      color: var(--slate-600);
+    }
+
+    .hero-btns {
+      margin-top: 2.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-blue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--blue-700);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-blue:hover { background: var(--blue-800); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1.5px solid var(--slate-300);
+      color: var(--slate-950);
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .btn-outline:hover { border-color: var(--slate-950); }
+
+    /* Contact rows */
+    .contact-rows {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--slate-900);
+      font-size: 1.05rem;
+      transition: color 0.15s;
+    }
+
+    .contact-row:not([href]) { pointer-events: none; }
+    .contact-row[href]:hover { color: var(--blue-700); }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--slate-950);
+      color: var(--white);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-sep {
+      width: 1px;
+      height: 28px;
+      background: var(--slate-300);
+      flex-shrink: 0;
+    }
+
+    /* ─── SERVICES ─── */
+    .services-section {
+      border-top: 1px solid var(--slate-200);
+      border-bottom: 1px solid var(--slate-200);
+      background: var(--slate-50);
+    }
+
+    .services-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 640px)  { .services-inner { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .services-inner { grid-template-columns: repeat(4, 1fr); } }
+
+    .benefit {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      border: 1.5px solid var(--blue-700);
+      color: var(--blue-700);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .benefit-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate-950);
+    }
+
+    .benefit-text {
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--slate-600);
+    }
+
+    /* ─── PACKAGES ─── */
+    .packages-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .packages-intro {
+      max-width: 42rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .packages-intro h2 {
+      margin-top: 1rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--slate-950);
+    }
+
+    .packages-intro p {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      line-height: 2;
+      color: var(--slate-600);
+    }
+
+    .packages-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 1024px) { .packages-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .pkg-card {
+      border: 1.5px solid var(--slate-200);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .pkg-card.featured {
+      border-color: var(--blue-700);
+      box-shadow: 0 8px 30px rgba(29,78,216,0.12);
+    }
+
+    .pkg-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .pkg-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color: var(--slate-950);
+    }
+
+    .pkg-desc {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--slate-600);
+    }
+
+    .pkg-badge {
+      background: var(--blue-700);
+      color: var(--white);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .pkg-price {
+      margin-top: 1.75rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.25rem;
+    }
+
+    .pkg-amount {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--slate-950);
+    }
+
+    .pkg-per {
+      font-size: 1rem;
+      color: var(--slate-500);
+      padding-bottom: 0.2rem;
+    }
+
+    .pkg-items {
+      margin-top: 1.75rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .pkg-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--slate-700);
+    }
+
+    .pkg-item svg { flex-shrink: 0; color: var(--blue-700); margin-top: 3px; }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: var(--slate-950);
+      color: var(--white);
+    }
+
+    .cta-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .cta-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .cta-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--blue-400);
+      margin-bottom: 1rem;
+    }
+
+    .cta-h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      max-width: 600px;
+    }
+
+    .cta-p {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      line-height: 2;
+      color: #94a3b8;
+      max-width: 580px;
+    }
+
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--white);
+      color: var(--slate-950);
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 0.85rem 2rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .btn-white:hover { background: var(--slate-50); }
+
+    /* ─── FOOTER ─── */
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--slate-500);
+      border-top: 1px solid var(--slate-200);
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner { flex-direction: row; justify-content: space-between; }
+    }
+
+    /* ─── MODAL ─── */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,0.55);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      background: var(--white);
+      border-radius: 1.25rem;
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+      animation: modal-in 0.22s ease;
+    }
+
+    @keyframes modal-in {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    .modal-header {
+      padding: 1.75rem 1.75rem 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .modal-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--slate-950);
+    }
+
+    .modal-subtitle {
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
+
+    .modal-close {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 9999px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      color: var(--slate-600);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .modal-close:hover { background: var(--slate-200); color: var(--slate-950); }
+
+    .modal-body {
+      padding: 1.5rem 1.75rem 1.75rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .field label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--slate-600);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--slate-950);
+      background: var(--slate-50);
+      border: 1.5px solid var(--slate-200);
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--blue-700);
+      background: var(--white);
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder { color: #94a3b8; }
+
+    .field textarea { resize: vertical; min-height: 90px; }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--blue-700);
+      color: var(--white);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover { background: var(--blue-800); }
+
+    /* Thank-you state */
+    .modal-thanks {
+      display: none;
+      padding: 3rem 1.75rem;
+      text-align: center;
+    }
+
+    .thanks-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(29,78,216,0.1);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      color: var(--blue-700);
+    }
+
+    .thanks-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--slate-950);
+      margin-bottom: 0.5rem;
+    }
+
+    .thanks-text {
+      font-size: 0.9rem;
+      color: var(--slate-600);
+      line-height: 1.75;
+    }
+
+    /* ─── REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: 0.08s; }
+  </style>
+</head>
+<body>
+
+<!-- SVG SYMBOL LIBRARY -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="logo-mark" viewBox="0 0 100 100">
+    <path d="M69 13H35L20 28v26l16 10 10-12-14-8V34l9-9h28z" fill="#155ed6"/>
+    <path d="M31 87h34l15-15V46L64 36 54 48l14 8v10l-9 9H31z" fill="#061225"/>
+    <path d="M36 59l22-22 12 9-24 24z" fill="#ffffff"/>
+  </symbol>
+</svg>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo-lockup" aria-label="Shawcliffe Digital home">
+      <svg width="42" height="42" aria-hidden="true"><use href="#logo-mark"/></svg>
+      <div class="logo-words">
+        <span class="logo-name">Shawcliffe</span>
+        <span class="logo-sub">Digital</span>
+      </div>
+    </a>
+
+    <ul class="header-nav" role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#" class="btn-dark" data-modal="booking">Book a Call</a>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<main>
+  <div class="hero">
+
+    <!-- Left: brand card -->
+    <div class="hero-card reveal">
+      <div class="logo-mark-large">
+        <svg width="96" height="96" aria-label="Shawcliffe Digital logo mark"><use href="#logo-mark"/></svg>
+        <div class="logo-mark-name">SHAWCLIFFE</div>
+        <div class="logo-mark-sub">DIGITAL</div>
+      </div>
+      <div class="card-divider"></div>
+      <p class="hero-tagline">
+        Custom branded apps for
+        <span class="blue">local contractors &amp; owner operators</span>
+      </p>
+    </div>
+
+    <!-- Right: content + contact -->
+    <div class="hero-content reveal d1" id="contact">
+      <p class="eyebrow">Shawcliffe Digital</p>
+      <h1 class="hero-h1">Your business. Your brand. In your customer's pocket.</h1>
+      <p class="hero-p">Minimal, professional app systems for contractors who want more leads, better follow-up, stronger reviews, and a cleaner customer experience.</p>
+
+      <div class="hero-btns">
+        <a href="#" class="btn-blue" data-modal="booking">
+          Get a Free App Blueprint
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#packages" class="btn-outline">View Packages</a>
+      </div>
+
+      <div class="contact-rows">
+        <a href="tel:+12893140591" class="contact-row">
+          <div class="contact-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="contact-sep"></div>
+          <span>(289) 314-0591</span>
+        </a>
+
+        <a href="mailto:hello@shawcliffedigital.com" class="contact-row">
+          <div class="contact-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div class="contact-sep"></div>
+          <span>hello@shawcliffedigital.com</span>
+        </a>
+
+        <a href="https://shawcliffedigital.com" class="contact-row">
+          <div class="contact-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+          </div>
+          <div class="contact-sep"></div>
+          <span>shawcliffedigital.com</span>
+        </a>
+
+        <div class="contact-row">
+          <div class="contact-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-sep"></div>
+          <span>Serving Local Businesses</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section id="services" class="services-section">
+    <div class="services-inner">
+
+      <div class="benefit reveal">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="benefit-title">More Leads</div>
+          <p class="benefit-text">Make it simple for customers to request quotes, call, or send job details.</p>
+        </div>
+      </div>
+
+      <div class="benefit reveal d1">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div>
+          <div class="benefit-title">More Reviews</div>
+          <p class="benefit-text">Guide happy customers toward leaving reviews after completed jobs.</p>
+        </div>
+      </div>
+
+      <div class="benefit reveal d1">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="benefit-title">Save Time</div>
+          <p class="benefit-text">Keep common requests, reminders, and follow-up actions organized.</p>
+        </div>
+      </div>
+
+      <div class="benefit reveal d1">
+        <div class="benefit-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <div class="benefit-title">Look Professional</div>
+          <p class="benefit-text">Give your local business a polished digital presence under your own brand.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PACKAGES ═══ -->
+  <section id="packages" class="packages-section">
+    <div class="packages-intro reveal">
+      <p class="eyebrow">Simple Packages</p>
+      <h2>Choose the app system that fits your business.</h2>
+      <p>Built for contractors, home-service businesses, and owner-operators who want practical digital tools without unnecessary complexity.</p>
+    </div>
+
+    <div class="packages-grid">
+
+      <!-- Starter -->
+      <div class="pkg-card reveal">
+        <div class="pkg-header">
+          <div>
+            <div class="pkg-name">Starter App</div>
+            <p class="pkg-desc">For small owner-operators who want a simple branded app presence.</p>
+          </div>
+        </div>
+        <div class="pkg-price">
+          <span class="pkg-amount">$99</span>
+          <span class="pkg-per">/mo</span>
+        </div>
+        <ul class="pkg-items" role="list">
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Branded app layout
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Contact buttons
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Services page
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Quote request form
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Review link
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Basic setup and support
+          </li>
+        </ul>
+      </div>
+
+      <!-- Growth (featured) -->
+      <div class="pkg-card featured reveal d1">
+        <div class="pkg-header">
+          <div>
+            <div class="pkg-name">Growth App</div>
+            <p class="pkg-desc">For contractors who want more leads, repeat business, and customer reminders.</p>
+          </div>
+          <span class="pkg-badge">Popular</span>
+        </div>
+        <div class="pkg-price">
+          <span class="pkg-amount">$169</span>
+          <span class="pkg-per">/mo</span>
+        </div>
+        <ul class="pkg-items" role="list">
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Everything in Starter
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Push notifications
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Seasonal offers
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Maintenance reminders
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Lead / customer list
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Photo upload form
+          </li>
+        </ul>
+      </div>
+
+      <!-- Premium -->
+      <div class="pkg-card reveal d1">
+        <div class="pkg-header">
+          <div>
+            <div class="pkg-name">Premium App</div>
+            <p class="pkg-desc">For contractors who want a more complete customer system and advanced features.</p>
+          </div>
+        </div>
+        <div class="pkg-price">
+          <span class="pkg-amount">$249</span>
+          <span class="pkg-per">/mo</span>
+        </div>
+        <ul class="pkg-items" role="list">
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Everything in Growth
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Admin dashboard
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Customer segments
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Loyalty / referral features
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Advanced forms
+          </li>
+          <li class="pkg-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+            Priority support
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA BAND ═══ -->
+  <div class="cta-band">
+    <div class="cta-inner reveal">
+      <div>
+        <p class="cta-eyebrow">Free Contractor App Blueprint</p>
+        <h2 class="cta-h2">See what a branded app could look like for your business.</h2>
+        <p class="cta-p">We'll map out the features that make sense for your service business, including quote requests, reminders, reviews, and customer follow-up.</p>
+      </div>
+      <a href="#" class="btn-white" data-modal="booking">
+        Book Your Free Call
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <p>© Shawcliffe Digital</p>
+    <p>Custom branded apps for local contractors &amp; owner operators.</p>
+  </div>
+</footer>
+
+<!-- ═══ BOOKING MODAL ═══ -->
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+
+    <!-- Form state -->
+    <div id="modal-form-wrap">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title" id="modal-title">Book Your Free Call</div>
+          <p class="modal-subtitle">We'll walk through exactly what a branded app would look like for your business.</p>
+        </div>
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="booking-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-name">Your Name *</label>
+              <input type="text" id="f-name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="field">
+              <label for="f-business">Business Name</label>
+              <input type="text" id="f-business" name="business" placeholder="Smith Roofing" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-phone">Phone</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="(000) 000-0000" />
+            </div>
+            <div class="field">
+              <label for="f-email">Email *</label>
+              <input type="email" id="f-email" name="email" placeholder="jane@example.com" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-time">Best Time to Reach You</label>
+            <select id="f-time" name="best_time">
+              <option value="">Select a time…</option>
+              <option>Morning (8am – 12pm)</option>
+              <option>Afternoon (12pm – 5pm)</option>
+              <option>Evening (5pm – 8pm)</option>
+              <option>Anytime</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-message">Tell us about your business</label>
+            <textarea id="f-message" name="message" placeholder="What trade or service do you offer? What's your biggest challenge right now?"></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            Send My Request
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Thank-you state -->
+    <div class="modal-thanks" id="modal-thanks">
+      <div class="thanks-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <div class="thanks-title">You're all set!</div>
+      <p class="thanks-text">Thanks for reaching out. Cassandra will be in touch within one business day to book your free call.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ── Scroll reveal ──
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ── Modal ──
+  const backdrop = document.getElementById('modal-backdrop');
+  const formWrap = document.getElementById('modal-form-wrap');
+  const thanks   = document.getElementById('modal-thanks');
+
+  function openModal() {
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('f-name').focus();
+  }
+
+  function closeModal() {
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Wire all CTA buttons to open the modal
+  document.querySelectorAll('[data-modal]').forEach(el => {
+    el.addEventListener('click', e => { e.preventDefault(); openModal(); });
+  });
+
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+
+  backdrop.addEventListener('click', e => {
+    if (e.target === backdrop) closeModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Form submit → POST to server, then show thank you
+  document.getElementById('booking-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const name  = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    if (!name)  { document.getElementById('f-name').focus();  return; }
+    if (!email) { document.getElementById('f-email').focus(); return; }
+
+    const submitBtn = this.querySelector('.btn-submit');
+    submitBtn.disabled    = true;
+    submitBtn.textContent = 'Sending…';
+
+    try {
+      const res  = await fetch('/api/book', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({
+          name,
+          business:  document.getElementById('f-business').value.trim(),
+          phone:     document.getElementById('f-phone').value.trim(),
+          email,
+          best_time: document.getElementById('f-time').value,
+          message:   document.getElementById('f-message').value.trim(),
+        }),
+      });
+      const data = await res.json();
+
+      if (data.ok) {
+        formWrap.style.display = 'none';
+        thanks.style.display   = 'block';
+      } else {
+        throw new Error(data.error || 'Something went wrong.');
+      }
+    } catch (err) {
+      submitBtn.disabled    = false;
+      submitBtn.textContent = 'Send My Request';
+      alert('Sorry, something went wrong: ' + err.message);
+    }
+  });
+</script>
+
+</body>
+</html>
