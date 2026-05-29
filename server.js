@@ -1,7 +1,6 @@
 require('dotenv').config();
-const express    = require('express');
-const nodemailer = require('nodemailer');
-const path       = require('path');
+const express = require('express');
+const path    = require('path');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -9,28 +8,12 @@ const PORT = process.env.PORT || 3000;
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname)); // serves index.html + any other static files
-
-// ── Mailer ────────────────────────────────────────────────────────────────────
-const transporter = nodemailer.createTransport({
-  host:              process.env.SMTP_HOST,
-  port:              Number(process.env.SMTP_PORT) || 587,
-  secure:            false,
-  requireTLS:        true,
-  connectionTimeout: 5000,
-  greetingTimeout:   5000,
-  socketTimeout:     5000,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+app.use(express.static(__dirname));
 
 // ── Booking form endpoint ─────────────────────────────────────────────────────
 app.post('/api/book', async (req, res) => {
   const { name, business, phone, email, best_time, message } = req.body;
 
-  // Basic server-side validation
   if (!name || !email) {
     return res.status(400).json({ ok: false, error: 'Name and email are required.' });
   }
@@ -41,19 +24,6 @@ app.post('/api/book', async (req, res) => {
   }
 
   const subject = `New call request from ${name}${business ? ` — ${business}` : ''}`;
-
-  const text = [
-    `New booking request from the Shawcliffe Digital website`,
-    ``,
-    `Name:          ${name}`,
-    `Business:      ${business  || '—'}`,
-    `Phone:         ${phone     || '—'}`,
-    `Email:         ${email}`,
-    `Best time:     ${best_time || '—'}`,
-    ``,
-    `Message:`,
-    message || '(none)',
-  ].join('\n');
 
   const html = `
     <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#020617">
@@ -82,23 +52,30 @@ app.post('/api/book', async (req, res) => {
   `;
 
   console.log(`[book] request from ${name} <${email}>`);
-  console.log(`[book] SMTP config — host:${process.env.SMTP_HOST} port:${process.env.SMTP_PORT} user:${process.env.SMTP_USER}`);
 
   try {
-    await transporter.sendMail({
-      from:    `"Shawcliffe Digital" <${process.env.SMTP_USER}>`,
-      to:      process.env.TO_EMAIL || 'cassandra@shawcliffedigital.com',
-      replyTo: email,
-      subject,
-      text,
-      html,
+    const response = await fetch('https://api.resend.com/emails', {
+      method:  'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type':  'application/json',
+      },
+      body: JSON.stringify({
+        from:     'Shawcliffe Digital <onboarding@resend.dev>',
+        to:       [process.env.TO_EMAIL || 'cassandra@shawcliffedigital.com'],
+        reply_to: email,
+        subject,
+        html,
+      }),
     });
 
-    console.log(`[book] email sent OK to ${process.env.TO_EMAIL}`);
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message || 'Resend error');
+
+    console.log('[book] email sent OK');
     res.json({ ok: true });
   } catch (err) {
     console.error('[book] mail send error:', err.message);
-    console.error('[book] full error:', err);
     res.status(500).json({ ok: false, error: 'Could not send email. Please try again.' });
   }
 });
