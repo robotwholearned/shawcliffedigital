@@ -61,7 +61,7 @@ app.post('/api/book', async (req, res) => {
         'Content-Type':  'application/json',
       },
       body: JSON.stringify({
-        from:     'Shawcliffe Digital <onboarding@resend.dev>',
+        from:     'Shawcliffe Digital <noreply@shawcliffedigital.com>',
         to:       [process.env.TO_EMAIL || 'cassandra@shawcliffedigital.com'],
         reply_to: email,
         subject,
