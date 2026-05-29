@@ -692,6 +692,17 @@
 
     .field textarea { resize: vertical; min-height: 90px; }
 
+    .field input.invalid,
+    .field textarea.invalid { border-color: #ef4444; background: #fff5f5; }
+
+    .field-error {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #ef4444;
+      display: none;
+    }
+    .field-error.visible { display: block; }
+
     .btn-submit {
       width: 100%;
       background: var(--blue-700);
@@ -1083,6 +1094,7 @@
             <div class="field">
               <label for="f-name">Your Name *</label>
               <input type="text" id="f-name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+              <span class="field-error" id="err-name">Please enter your name.</span>
             </div>
             <div class="field">
               <label for="f-business">Business Name</label>
@@ -1097,6 +1109,7 @@
             <div class="field">
               <label for="f-email">Email *</label>
               <input type="email" id="f-email" name="email" placeholder="jane@example.com" autocomplete="email" required />
+              <span class="field-error" id="err-email">Please enter a valid email address.</span>
             </div>
           </div>
           <div class="field">
@@ -1172,14 +1185,39 @@
     if (e.key === 'Escape') closeModal();
   });
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setError(inputId, errorId, condition) {
+    const input = document.getElementById(inputId);
+    const err   = document.getElementById(errorId);
+    if (condition) {
+      input.classList.add('invalid');
+      err.classList.add('visible');
+    } else {
+      input.classList.remove('invalid');
+      err.classList.remove('visible');
+    }
+    return condition;
+  }
+
+  ['f-name', 'f-email'].forEach(id => {
+    document.getElementById(id).addEventListener('input', function() {
+      if (id === 'f-name')  setError('f-name',  'err-name',  !this.value.trim());
+      if (id === 'f-email') setError('f-email', 'err-email', !emailRegex.test(this.value.trim()));
+    });
+  });
+
   // Form submit → POST to server, then show thank you
   document.getElementById('booking-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     const name  = document.getElementById('f-name').value.trim();
     const email = document.getElementById('f-email').value.trim();
-    if (!name)  { document.getElementById('f-name').focus();  return; }
-    if (!email) { document.getElementById('f-email').focus(); return; }
+    const hasErrors = [
+      setError('f-name',  'err-name',  !name),
+      setError('f-email', 'err-email', !emailRegex.test(email)),
+    ].some(Boolean);
+    if (hasErrors) return;
 
     const submitBtn = this.querySelector('.btn-submit');
     submitBtn.disabled    = true;
