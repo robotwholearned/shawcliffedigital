@@ -78,6 +78,9 @@ app.post('/api/book', async (req, res) => {
     </div>
   `;
 
+  console.log(`[book] request from ${name} <${email}>`);
+  console.log(`[book] SMTP config — host:${process.env.SMTP_HOST} port:${process.env.SMTP_PORT} user:${process.env.SMTP_USER}`);
+
   try {
     await transporter.sendMail({
       from:    `"Shawcliffe Digital" <${process.env.SMTP_USER}>`,
@@ -88,9 +91,11 @@ app.post('/api/book', async (req, res) => {
       html,
     });
 
+    console.log(`[book] email sent OK to ${process.env.TO_EMAIL}`);
     res.json({ ok: true });
   } catch (err) {
-    console.error('Mail send error:', err.message);
+    console.error('[book] mail send error:', err.message);
+    console.error('[book] full error:', err);
     res.status(500).json({ ok: false, error: 'Could not send email. Please try again.' });
   }
 });
