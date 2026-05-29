@@ -13,10 +13,13 @@ app.use(express.static(__dirname)); // serves index.html + any other static file
 
 // ── Mailer ────────────────────────────────────────────────────────────────────
 const transporter = nodemailer.createTransport({
-  host:       process.env.SMTP_HOST,
-  port:       Number(process.env.SMTP_PORT) || 587,
-  secure:     false,
-  requireTLS: true,
+  host:              process.env.SMTP_HOST,
+  port:              Number(process.env.SMTP_PORT) || 587,
+  secure:            false,
+  requireTLS:        true,
+  connectionTimeout: 5000,
+  greetingTimeout:   5000,
+  socketTimeout:     5000,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
