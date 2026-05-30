@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shawcliffe Digital — Custom Branded Apps for Contractors</title>
   <meta name="description" content="Shawcliffe Digital builds custom branded app systems for local contractors and owner operators — more leads, better follow-up, stronger reviews." />
+  <link rel="canonical" href="https://shawcliffedigital.com" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://shawcliffedigital.com" />
+  <meta property="og:title"       content="Shawcliffe Digital — Custom Branded Apps for Contractors" />
+  <meta property="og:description" content="Shawcliffe Digital builds custom branded app systems for local contractors and owner operators — more leads, better follow-up, stronger reviews." />
+  <meta property="og:image"       content="https://shawcliffedigital.com/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Shawcliffe Digital — Custom Branded Apps for Contractors" />
+  <meta name="twitter:description" content="Shawcliffe Digital builds custom branded app systems for local contractors and owner operators — more leads, better follow-up, stronger reviews." />
+  <meta name="twitter:image"       content="https://shawcliffedigital.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -1157,24 +1172,50 @@
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
   // ── Modal ──
-  const backdrop = document.getElementById('modal-backdrop');
-  const formWrap = document.getElementById('modal-form-wrap');
-  const thanks   = document.getElementById('modal-thanks');
+  const backdrop   = document.getElementById('modal-backdrop');
+  const formWrap   = document.getElementById('modal-form-wrap');
+  const thanks     = document.getElementById('modal-thanks');
+  const submitBtn  = document.querySelector('.btn-submit');
+  const submitHTML = submitBtn.innerHTML;
+  let   opener     = null;
 
-  function openModal() {
+  const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+
+  function trapFocus(e) {
+    const els   = Array.from(backdrop.querySelectorAll(FOCUSABLE));
+    const first = els[0];
+    const last  = els[els.length - 1];
+    if (e.key !== 'Tab') return;
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+    }
+  }
+
+  function openModal(trigger) {
+    opener = trigger || null;
+    // Reset to form state on every open
+    formWrap.style.display = '';
+    thanks.style.display   = 'none';
+    submitBtn.disabled     = false;
+    submitBtn.innerHTML    = submitHTML;
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
     document.getElementById('f-name').focus();
+    backdrop.addEventListener('keydown', trapFocus);
   }
 
   function closeModal() {
     backdrop.classList.remove('open');
     document.body.style.overflow = '';
+    backdrop.removeEventListener('keydown', trapFocus);
+    if (opener) { opener.focus(); opener = null; }
   }
 
   // Wire all CTA buttons to open the modal
   document.querySelectorAll('[data-modal]').forEach(el => {
-    el.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    el.addEventListener('click', e => { e.preventDefault(); openModal(el); });
   });
 
   document.getElementById('modal-close').addEventListener('click', closeModal);
@@ -1184,7 +1225,7 @@
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key === 'Escape' && backdrop.classList.contains('open')) closeModal();
   });
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -1221,9 +1262,8 @@
     ].some(Boolean);
     if (hasErrors) return;
 
-    const submitBtn = this.querySelector('.btn-submit');
-    submitBtn.disabled    = true;
-    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled  = true;
+    submitBtn.innerHTML = 'Sending…';
 
     try {
       const res  = await fetch('/api/book', {
@@ -1247,8 +1287,8 @@
         throw new Error(data.error || 'Something went wrong.');
       }
     } catch (err) {
-      submitBtn.disabled    = false;
-      submitBtn.textContent = 'Send My Request';
+      submitBtn.disabled  = false;
+      submitBtn.innerHTML = submitHTML;
       alert('Sorry, something went wrong: ' + err.message);
     }
   });
