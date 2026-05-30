@@ -2,141 +2,161 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;900&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     width: 1200px;
     height: 630px;
     overflow: hidden;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: #0f172a;
+    background: #FFFFFF;
   }
   .card {
     width: 1200px;
     height: 630px;
-    background: #0f172a;
+    background: #FFFFFF;
     display: flex;
-    align-items: center;
-    padding: 80px 100px;
-    gap: 80px;
-    position: relative;
-    overflow: hidden;
+    align-items: stretch;
   }
-  /* Subtle background accent */
-  .card::before {
-    content: '';
-    position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(29,78,216,0.25) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .card::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    left: 200px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(29,78,216,0.12) 0%, transparent 70%);
-    pointer-events: none;
-  }
+
+  /* Left column — logo panel */
   .logo-col {
+    width: 380px;
+    flex-shrink: 0;
+    background: #F8F9FC;
+    border-right: 2px solid #EEF0F6;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-shrink: 0;
+    justify-content: center;
+    gap: 0;
+    padding: 64px 48px;
   }
   .logo-name {
-    margin-top: 20px;
-    font-size: 28px;
+    margin-top: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
     font-weight: 900;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #040F23;
     line-height: 1;
   }
+  .logo-divider {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .logo-rule {
+    height: 1.5px;
+    width: 24px;
+    background: #114AC4;
+    display: inline-block;
+  }
   .logo-sub {
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.4em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #60a5fa;
+    color: #114AC4;
   }
-  .divider {
-    width: 1px;
-    height: 220px;
-    background: rgba(255,255,255,0.12);
-    flex-shrink: 0;
+  .logo-tagline {
+    margin-top: 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #040F23;
+    line-height: 1.8;
   }
+  .logo-tagline span { color: #114AC4; }
+
+  /* Right column — content */
   .content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: center;
+    padding: 64px 80px;
+    gap: 0;
   }
   .eyebrow {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.28em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #60a5fa;
+    color: #114AC4;
+    margin-bottom: 20px;
   }
   .headline {
-    font-size: 46px;
-    font-weight: 800;
-    line-height: 1.15;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.1;
     letter-spacing: -0.02em;
-    color: #ffffff;
-  }
-  .headline span { color: #60a5fa; }
-  .tagline {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #94a3b8;
-    max-width: 480px;
-  }
-  .badge {
-    margin-top: 8px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(29,78,216,0.2);
-    border: 1px solid rgba(29,78,216,0.4);
-    border-radius: 9999px;
-    padding: 8px 20px;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #93c5fd;
-    width: fit-content;
+    color: #040F23;
+    margin-bottom: 28px;
+  }
+  .headline span { color: #114AC4; }
+  .rule {
+    width: 48px;
+    height: 3px;
+    background: #114AC4;
+    margin-bottom: 28px;
+  }
+  .tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #3A4060;
+    max-width: 440px;
+    margin-bottom: 36px;
+  }
+  .domain {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #114AC4;
   }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
 <body>
 <div class="card">
-  <div class="logo-col">
-    <svg width="100" height="130" viewBox="0 0 129 169" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 67 32 L 24 59 L 24 96 L 60 118 L 66 118 L 66 105 L 38 87 L 38 66 L 65 49 L 93 65 L 108 58 Z" fill="#60a5fa"/>
-      <path d="M 62 137 L 105 110 L 105 73 L 69 51 L 63 51 L 63 64 L 91 82 L 91 103 L 64 120 L 36 104 L 21 111 Z" fill="#ffffff"/>
-    </svg>
-    <div class="logo-name">Shawcliffe</div>
-    <div class="logo-sub">Digital</div>
-  </div>
 
-  <div class="divider"></div>
+  <div class="logo-col">
+    <svg width="80" height="105" viewBox="0 0 129 169" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 67 32 L 24 59 L 24 96 L 60 118 L 66 118 L 66 105 L 38 87 L 38 66 L 65 49 L 93 65 L 108 58 Z" fill="#114AC4"/>
+      <path d="M 72 74 L 66 74 L 66 87 L 94 105 L 94 126 L 67 143 L 39 127 L 24 134 L 65 160 L 108 133 L 108 96 Z" fill="#040F23"/>
+    </svg>
+    <div class="logo-name">SHAWCLIFFE</div>
+    <div class="logo-divider">
+      <span class="logo-rule"></span>
+      <span class="logo-sub">DIGITAL</span>
+      <span class="logo-rule"></span>
+    </div>
+    <div class="logo-tagline">
+      CUSTOM BRANDED APPS FOR<br>
+      <span>LOCAL CONTRACTORS &amp;<br>OWNER OPERATORS</span>
+    </div>
+  </div>
 
   <div class="content">
-    <div class="eyebrow">Custom Branded Apps</div>
-    <div class="headline">Your business.<br>Your brand.<br><span>In their pocket.</span></div>
+    <div class="eyebrow">Shawcliffe Digital</div>
+    <div class="headline">YOUR BUSINESS.<br>YOUR BRAND.<br><span>IN THEIR POCKET.</span></div>
+    <div class="rule"></div>
     <div class="tagline">App systems for local contractors who want more leads, better follow-up, and stronger reviews.</div>
-    <div class="badge">shawcliffedigital.com</div>
+    <div class="domain">shawcliffedigital.com</div>
   </div>
+
 </div>
 </body>
 </html>
