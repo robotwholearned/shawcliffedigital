@@ -3,45 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shawcliffe Digital — Custom Branded Apps for Contractors</title>
-  <meta name="description" content="Shawcliffe Digital builds custom branded app systems for local contractors and owner operators — more leads, better follow-up, stronger reviews." />
+  <title>Shawcliffe Digital — Branded Lead Capture Systems for Local Contractors &amp; Owner Operators</title>
+  <meta name="description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for local contractors and owner-operators — more leads, faster follow-up, stronger reviews." />
   <link rel="canonical" href="https://shawcliffedigital.com" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://shawcliffedigital.com" />
-  <meta property="og:title"       content="Shawcliffe Digital — Custom Branded Apps for Contractors" />
-  <meta property="og:description" content="Shawcliffe Digital builds custom branded app systems for local contractors and owner operators — more leads, better follow-up, stronger reviews." />
+  <meta property="og:title"       content="Shawcliffe Digital — Branded Lead Capture Systems for Local Contractors &amp; Owner Operators" />
+  <meta property="og:description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for local contractors and owner-operators — more leads, faster follow-up, stronger reviews." />
   <meta property="og:image"       content="https://shawcliffedigital.com/og-image.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Shawcliffe Digital — Custom Branded Apps for Contractors" />
-  <meta name="twitter:description" content="Shawcliffe Digital builds custom branded app systems for local contractors and owner operators — more leads, better follow-up, stronger reviews." />
+  <meta name="twitter:title"       content="Shawcliffe Digital — Branded Lead Capture Systems for Local Contractors &amp; Owner Operators" />
+  <meta name="twitter:description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for local contractors and owner-operators — more leads, faster follow-up, stronger reviews." />
   <meta name="twitter:image"       content="https://shawcliffedigital.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* Brand palette — see brand/shawcliffe-digital-brand-guidelines.html */
     :root {
-      --slate-50:  #f8fafc;
-      --slate-200: #e2e8f0;
-      --slate-300: #cbd5e1;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --slate-700: #334155;
-      --slate-900: #0f172a;
-      --slate-950: #020617;
-      --blue-400:  #60a5fa;
-      --blue-700:  #1d4ed8;
-      --blue-800:  #1e40af;
-      --white:     #ffffff;
+      --slate-50:  #F8F9FC; /* Off White */
+      --slate-200: #EEF0F6; /* Gray 100 */
+      --slate-300: #C4C9D9; /* Gray 300 */
+      --slate-500: #737B96; /* Gray 500 */
+      --slate-600: #3A4060; /* Slate — body text */
+      --slate-700: #3A4060; /* Slate — body text */
+      --slate-900: #040F23; /* Shawcliffe Navy */
+      --slate-950: #040F23; /* Shawcliffe Navy */
+      --blue-400:  #3A6AE8; /* Blue Light — highlights on dark */
+      --blue-700:  #114AC4; /* Shawcliffe Blue */
+      --blue-800:  #3A6AE8; /* Blue Light — hover states */
+      --white:     #FFFFFF;
     }
 
     html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    /* Brand typography: Montserrat for display/headings, Inter for body & UI */
+    .logo-name, .logo-sub, .logo-mark-name, .logo-mark-sub, .hero-tagline,
+    .eyebrow, .cta-eyebrow, .hero-h1, .how-intro h2, .packages-intro h2,
+    .cta-h2, .benefit-title, .how-title, .how-num, .pkg-name, .pkg-amount,
+    .pkg-badge, .modal-title, .thanks-title {
+      font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+    }
+
+    .hero-h1 { text-transform: uppercase; font-weight: 900; }
+    .how-intro h2, .packages-intro h2, .cta-h2 { text-transform: uppercase; }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -378,6 +390,74 @@
       color: var(--slate-600);
     }
 
+    /* ─── HOW IT WORKS ─── */
+    .how-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 0;
+    }
+
+    .how-intro {
+      max-width: 42rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .how-intro h2 {
+      margin-top: 1rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--slate-950);
+    }
+
+    .how-intro p {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      line-height: 2;
+      color: var(--slate-600);
+    }
+
+    .how-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 768px) { .how-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+
+    .how-num {
+      width: 44px;
+      height: 44px;
+      border: 1.5px solid var(--blue-700);
+      color: var(--blue-700);
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+
+    .how-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate-950);
+    }
+
+    .how-text {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: var(--slate-600);
+    }
+
     /* ─── PACKAGES ─── */
     .packages-section {
       max-width: 1280px;
@@ -546,7 +626,7 @@
       margin-top: 1rem;
       font-size: 1.05rem;
       line-height: 2;
-      color: #94a3b8;
+      color: var(--slate-300);
       max-width: 580px;
     }
 
@@ -707,7 +787,7 @@
     }
 
     .field input::placeholder,
-    .field textarea::placeholder { color: #94a3b8; }
+    .field textarea::placeholder { color: var(--slate-500); }
 
     .field textarea { resize: vertical; min-height: 90px; }
 
@@ -809,11 +889,12 @@
 
     <ul class="header-nav" role="list">
       <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
       <li><a href="#packages">Packages</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <a href="#" class="btn-dark" data-modal="booking">Book a Call</a>
+    <a href="#" class="btn-dark" data-modal="booking">Book a Free Consultation</a>
   </div>
 </header>
 
@@ -830,7 +911,7 @@
       </div>
       <div class="card-divider"></div>
       <p class="hero-tagline">
-        Custom branded apps for
+        Branded lead capture systems for
         <span class="blue">local contractors &amp; owner operators</span>
       </p>
     </div>
@@ -838,24 +919,24 @@
     <!-- Right: content + contact -->
     <div class="hero-content reveal d1" id="contact">
       <p class="eyebrow">Shawcliffe Digital</p>
-      <h1 class="hero-h1">Your business. Your brand. In your customer's pocket.</h1>
-      <p class="hero-p">Minimal, professional app systems for contractors who want more leads, better follow-up, stronger reviews, and a cleaner customer experience.</p>
+      <h1 class="hero-h1">Turn missed inquiries into booked jobs.</h1>
+      <p class="hero-p">Get your own branded app and website that make it easy for customers to reach you, request quotes, and leave reviews — while you get faster follow-up and one place to manage it all.</p>
 
       <div class="hero-btns">
         <a href="#" class="btn-blue" data-modal="booking">
-          Get a Free App Blueprint
+          Book a Free Consultation
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
         <a href="#packages" class="btn-outline">View Packages</a>
       </div>
 
       <div class="contact-rows">
-        <a href="tel:+13683389261" class="contact-row">
+        <a href="tel:+14036295874" class="contact-row">
           <div class="contact-icon" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
           <div class="contact-sep"></div>
-          <span>(368) 338-9261</span>
+          <span>(403) 629-5874</span>
         </a>
 
         <a href="mailto:hello@shawcliffedigital.com" class="contact-row">
@@ -926,10 +1007,39 @@
         </div>
         <div>
           <div class="benefit-title">Look Professional</div>
-          <p class="benefit-text">Give your local business a polished digital presence under your own brand.</p>
+          <p class="benefit-text">Give your local business a polished app and website under your own brand.</p>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section id="how-it-works">
+    <div class="how-inner">
+      <div class="how-intro reveal">
+        <p class="eyebrow">How It Works</p>
+        <h2>From first inquiry to booked job.</h2>
+        <p>Here's exactly what you get, and how it works for your business.</p>
+      </div>
+
+      <div class="how-grid">
+        <div class="reveal">
+          <div class="how-num" aria-hidden="true">1</div>
+          <div class="how-title">We Build Your Branded App &amp; Website</div>
+          <p class="how-text">Your logo, colors, services, and contact info — built into your own app and a simple website, ready in days, not months.</p>
+        </div>
+        <div class="reveal d1">
+          <div class="how-num" aria-hidden="true">2</div>
+          <div class="how-title">Customers Reach You In One Tap</div>
+          <p class="how-text">Quote requests, calls, and job details land in one place, so nothing gets buried in texts or voicemail.</p>
+        </div>
+        <div class="reveal d1">
+          <div class="how-num" aria-hidden="true">3</div>
+          <div class="how-title">You Follow Up And Grow</div>
+          <p class="how-text">Automatic reminders and review requests keep customers coming back, without you having to remember to send them.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -937,8 +1047,8 @@
   <section id="packages" class="packages-section">
     <div class="packages-intro reveal">
       <p class="eyebrow">Simple Packages</p>
-      <h2>Choose the app system that fits your business.</h2>
-      <p>Built for contractors, home-service businesses, and owner-operators who want practical digital tools without unnecessary complexity.</p>
+      <h2>Choose the system that fits your business.</h2>
+      <p>Every package includes a branded app and website built for contractors, home-service businesses, and owner-operators who want practical digital tools without unnecessary complexity.</p>
     </div>
 
     <div class="packages-grid">
@@ -947,8 +1057,8 @@
       <div class="pkg-card reveal">
         <div class="pkg-header">
           <div>
-            <div class="pkg-name">Starter App</div>
-            <p class="pkg-desc">For small owner-operators who want a simple branded app presence.</p>
+            <div class="pkg-name">Starter System</div>
+            <p class="pkg-desc">For small owner-operators who want a simple branded app and website.</p>
           </div>
         </div>
         <div class="pkg-price">
@@ -958,7 +1068,7 @@
         <ul class="pkg-items" role="list">
           <li class="pkg-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Branded app layout
+            Branded app and website
           </li>
           <li class="pkg-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
@@ -987,7 +1097,7 @@
       <div class="pkg-card featured reveal d1">
         <div class="pkg-header">
           <div>
-            <div class="pkg-name">Growth App</div>
+            <div class="pkg-name">Growth System</div>
             <p class="pkg-desc">For contractors who want more leads, repeat business, and customer reminders.</p>
           </div>
           <span class="pkg-badge">Popular</span>
@@ -1028,7 +1138,7 @@
       <div class="pkg-card reveal d1">
         <div class="pkg-header">
           <div>
-            <div class="pkg-name">Premium App</div>
+            <div class="pkg-name">Premium System</div>
             <p class="pkg-desc">For contractors who want a more complete customer system and advanced features.</p>
           </div>
         </div>
@@ -1047,11 +1157,11 @@
           </li>
           <li class="pkg-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Customer segments
+            Group customers (VIP, repeat, etc.)
           </li>
           <li class="pkg-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Loyalty / referral features
+            Repeat-customer &amp; referral tools
           </li>
           <li class="pkg-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
@@ -1071,12 +1181,12 @@
   <div class="cta-band">
     <div class="cta-inner reveal">
       <div>
-        <p class="cta-eyebrow">Free Contractor App Blueprint</p>
-        <h2 class="cta-h2">See what a branded app could look like for your business.</h2>
-        <p class="cta-p">We'll map out the features that make sense for your service business, including quote requests, reminders, reviews, and customer follow-up.</p>
+        <p class="cta-eyebrow">Free Consultation</p>
+        <h2 class="cta-h2">See exactly what your branded app and website would look like.</h2>
+        <p class="cta-p">We'll walk you through the features that make sense for your business, including quote requests, reminders, reviews, and customer follow-up.</p>
       </div>
       <a href="#" class="btn-white" data-modal="booking">
-        Book Your Free Call
+        Book a Free Consultation
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
@@ -1087,7 +1197,7 @@
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
-    <p class="footer-tagline">Custom branded apps for local contractors &amp; owner operators.</p>
+    <p class="footer-tagline">Branded lead capture systems for local contractors &amp; owner operators.</p>
     <p class="footer-copy">© Shawcliffe Digital</p>
   </div>
 </footer>
@@ -1100,8 +1210,8 @@
     <div id="modal-form-wrap">
       <div class="modal-header">
         <div>
-          <div class="modal-title" id="modal-title">Book Your Free Call</div>
-          <p class="modal-subtitle">We'll walk through exactly what a branded app would look like for your business.</p>
+          <div class="modal-title" id="modal-title">Book Your Free Consultation</div>
+          <p class="modal-subtitle">We'll walk through exactly what your branded app and website would look like for your business.</p>
         </div>
         <button class="modal-close" id="modal-close" aria-label="Close">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -1159,7 +1269,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
       </div>
       <div class="thanks-title">You're all set!</div>
-      <p class="thanks-text">Thanks for reaching out. Cassandra will be in touch within one business day to book your free call.</p>
+      <p class="thanks-text">Thanks for reaching out. Cassandra will be in touch within one business day to book your free consultation.</p>
     </div>
 
   </div>
