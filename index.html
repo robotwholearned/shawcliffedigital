@@ -591,6 +591,59 @@
 
     .pkg-item svg { flex-shrink: 0; color: var(--blue-700); margin-top: 3px; }
 
+
+    /* ─── ARCHETYPE PICKER ─── */
+    .picker { margin-top: 3rem; }
+    .picker-chips {
+      display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: center;
+    }
+    .chip {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.85rem; font-weight: 600;
+      padding: 0.55rem 1rem;
+      border: 1.5px solid var(--slate-200); border-radius: 9999px;
+      background: var(--white); color: var(--slate-700);
+      cursor: pointer; transition: background .15s, border-color .15s, color .15s;
+    }
+    .chip:hover { border-color: var(--blue-700); color: var(--blue-700); }
+    .chip.active { background: var(--blue-700); border-color: var(--blue-700); color: var(--white); }
+    .picker-panel { margin: 2rem auto 0; max-width: 720px; text-align: left; }
+    .arch-ex {
+      font-size: 0.8rem; font-weight: 600; color: var(--slate-500);
+      letter-spacing: 0.01em;
+    }
+    .arch-name {
+      margin-top: 0.35rem; font-size: 1.5rem; font-weight: 800;
+      letter-spacing: 0.01em; color: var(--slate-950);
+    }
+    .arch-promise {
+      margin-top: 0.85rem; font-size: 0.95rem; line-height: 1.75; color: var(--slate-600);
+    }
+    .arch-subhead {
+      margin-top: 1.75rem; font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate-500);
+    }
+    .arch-components {
+      margin-top: 0.85rem; list-style: none;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem 1rem;
+    }
+    @media (max-width: 600px) { .arch-components { grid-template-columns: 1fr; } }
+    .arch-comp {
+      display: flex; gap: 0.6rem; align-items: flex-start;
+      font-size: 0.875rem; line-height: 1.6; color: var(--slate-700);
+    }
+    .arch-comp svg { flex-shrink: 0; color: var(--blue-700); margin-top: 3px; }
+    .picker-cta {
+      margin-top: 1.75rem; border-top: 1px solid var(--slate-200); padding-top: 1.5rem;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;
+    }
+    .picker-caretext { font-size: 0.85rem; color: var(--slate-500); }
+    .picker-note {
+      margin-top: 1.5rem; text-align: center; font-size: 0.8rem;
+      line-height: 1.7; color: var(--slate-500); max-width: 640px;
+      margin-left: auto; margin-right: auto;
+    }
+
     /* ─── CTA BAND ─── */
     .cta-band {
       background: var(--slate-950);
@@ -1056,137 +1109,36 @@
   <!-- ═══ PACKAGES ═══ -->
   <section id="packages" class="packages-section">
     <div class="packages-intro reveal">
-      <p class="eyebrow">Simple Packages</p>
-      <h2>Choose the system that fits your business.</h2>
-      <p>Every package is a complete branded system — delivered as an iOS app, Android app, and website — built for contractors, home-service businesses, and owner-operators who want practical digital tools without unnecessary complexity.</p>
+      <p class="eyebrow">Packages by Business Type</p>
+      <h2>A system built for your line of work.</h2>
+      <p>Pick your business type to see the system we'd build for it — the components included and typical pricing. Every system is assembled from our proven component library, tuned to how your business actually works.</p>
     </div>
 
-    <div class="packages-grid">
-
-      <!-- Starter -->
-      <div class="pkg-card reveal">
-        <div class="pkg-header">
-          <div>
-            <div class="pkg-name">Starter System</div>
-            <p class="pkg-desc">For small owner-operators who want a simple branded system — your own iOS app, Android app, and website.</p>
-          </div>
-        </div>
-        <div class="pkg-price">
-          <span class="pkg-amount">$99</span>
-          <span class="pkg-per">/mo</span>
-        </div>
-        <p class="pkg-setup">+ $499 one-time setup — <strong>waived with a 12-month commitment</strong></p>
-        <ul class="pkg-items" role="list">
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Branded iOS &amp; Android apps + website
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Contact buttons
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Services page
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Quote request form
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Review link
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Basic setup and support
-          </li>
-        </ul>
+    <div class="picker reveal">
+      <div class="picker-chips" role="tablist" aria-label="Choose your business type">
+        <button class="chip active" role="tab" aria-selected="true" data-arch="0">Barbers & Salons</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="1">Trades</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="2">Cleaning & Lawn Care</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="3">Bakers & Food Makers</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="4">Market & Pop-Up Sellers</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="5">Pet Services</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="6">Auto & Repair</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="7">Photo & Events</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="8">Lessons & Coaching</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="9">Wellness & Health</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="10">Retail & Boutiques</button>
+        <button class="chip" role="tab" aria-selected="false" data-arch="11">Bookkeeping & Pro Services</button>
       </div>
 
-      <!-- Growth (featured) -->
-      <div class="pkg-card featured reveal d1">
-        <div class="pkg-header">
-          <div>
-            <div class="pkg-name">Growth System</div>
-            <p class="pkg-desc">For contractors who want more leads, repeat business, and customer reminders.</p>
-          </div>
-          <span class="pkg-badge">Popular</span>
+      <div class="picker-panel pkg-card featured" role="tabpanel">
+        <div id="arch-detail"></div>
+        <div class="picker-cta">
+          <a href="#" class="btn-blue" data-modal="booking">Book a Free Consultation</a>
+          <span class="picker-caretext">Not sure which fits? We'll map it out with you.</span>
         </div>
-        <div class="pkg-price">
-          <span class="pkg-amount">$169</span>
-          <span class="pkg-per">/mo</span>
-        </div>
-        <p class="pkg-setup">+ $499 one-time setup — <strong>waived with a 12-month commitment</strong></p>
-        <ul class="pkg-items" role="list">
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Everything in Starter
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Push notifications
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Seasonal offers
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Maintenance reminders
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Lead / customer list
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Photo upload form
-          </li>
-        </ul>
       </div>
 
-      <!-- Premium -->
-      <div class="pkg-card reveal d1">
-        <div class="pkg-header">
-          <div>
-            <div class="pkg-name">Premium System</div>
-            <p class="pkg-desc">For contractors who want a more complete customer system and advanced features.</p>
-          </div>
-        </div>
-        <div class="pkg-price">
-          <span class="pkg-amount">$249</span>
-          <span class="pkg-per">/mo</span>
-        </div>
-        <p class="pkg-setup">+ $499 one-time setup — <strong>waived with a 12-month commitment</strong></p>
-        <ul class="pkg-items" role="list">
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Everything in Growth
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Admin dashboard
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Group customers (VIP, repeat, etc.)
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Repeat-customer &amp; referral tools
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Advanced forms
-          </li>
-          <li class="pkg-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            Priority support
-          </li>
-        </ul>
-      </div>
-
+      <p class="picker-note">Don't see your business? We build for most local owner-operated trades and shops — just ask.</p>
     </div>
   </section>
 
@@ -1419,5 +1371,36 @@
   });
 </script>
 
+
+<script>
+  (function () {
+    var ARCH = [{"chip": "Barbers & Salons", "ex": "Barbers · hair, nail & lash techs · estheticians · massage", "name": "Booking & Review Starter System", "promise": "A simple system that helps customers see your services, request appointments, rebook, and leave reviews — without everything getting buried in texts and DMs.", "comp": ["Business Profile", "Service & Product Menu", "Booking Request System", "Notifications", "Review Request System", "Customer Confirmation"], "price": ["$2,000–$4,000", "$4,000–$7,500", "$7,500+"]}, {"chip": "Trades", "ex": "Welders · plumbers · HVAC · electricians · handymen", "name": "Quote Request Starter System", "promise": "A simple quote request system that helps customers send job details, location, urgency, and photos upfront — so you waste less time chasing basic information.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Quote Form", "Photo & File Upload", "Notifications", "Customer Confirmation", "Review Request System"], "price": ["$2,500–$5,000", "$5,000–$8,000", "$8,000+"]}, {"chip": "Cleaning & Lawn Care", "ex": "Cleaners · lawn care · snow removal · landscapers", "name": "Recurring Client Starter System", "promise": "A simple system that helps property service businesses collect inquiries, organize property details, and turn one-time jobs into recurring clients.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Request Form", "Recurring Schedule Request", "Notifications", "Property Details", "Review Request System"], "price": ["$3,000–$5,500", "$5,500–$9,000", "$9,000+"]}, {"chip": "Bakers & Food Makers", "ex": "Bakers · cake makers · meal prep · chocolatiers", "name": "Menu & Preorder Starter System", "promise": "A simple system that helps customers see your menu, understand lead times, submit preorder or custom-order requests, and get clear pickup instructions.", "comp": ["Business Profile", "Service & Product Menu", "Preorder / Order Form", "Notifications", "Customer Confirmation", "Lead Times & Policies", "Review Request System"], "price": ["$2,500–$5,000", "$5,000–$8,500", "$8,500+"]}, {"chip": "Market & Pop-Up Sellers", "ex": "Fruit stands · honey sellers · market vendors · food trucks", "name": "Live Status Starter System", "promise": "A simple live-update system that lets customers check whether you're open, where you are, what you have today, prices, and whether anything's sold out.", "comp": ["Business Profile", "Service & Product Menu", "Admin Dashboard", "Status Tracker", "Product Inventory", "Location / Pop-Up Tracker", "QR Code Setup", "Notifications"], "price": ["$3,000–$6,000", "$6,000–$9,000", "$9,000+"]}, {"chip": "Pet Services", "ex": "Groomers · pet sitters · dog walkers · trainers", "name": "Pet Booking & Intake Starter System", "promise": "A simple booking and intake system that collects customer information and key pet details — breed, size, allergies, behaviour notes, and service preferences.", "comp": ["Business Profile", "Service & Product Menu", "Booking Request System", "Pet Intake Form", "Notifications", "Pet Profile Fields", "Review Request System"], "price": ["$3,000–$5,500", "$5,500–$9,000", "$9,000+"]}, {"chip": "Auto & Repair", "ex": "Mobile mechanics · detailers · tire & small-engine repair", "name": "Vehicle Service Request Starter System", "promise": "A simple service request system that collects vehicle or equipment details, issue descriptions, photos, location, urgency, and contact info upfront.", "comp": ["Business Profile", "Service & Product Menu", "Service Request Form", "Vehicle Detail Fields", "Photo & File Upload", "Notifications", "Review Request System"], "price": ["$3,000–$5,500", "$5,500–$9,000", "$9,000+"]}, {"chip": "Photo & Events", "ex": "Photographers · DJs · videographers · florists · planners", "name": "Event Inquiry Starter System", "promise": "A simple system that helps event clients send the date, venue, package interest, guest count, budget, inspiration, and contact details in one organized inquiry.", "comp": ["Business Profile", "Service & Product Menu", "Event Inquiry Form", "Event Detail Fields", "Photo & File Upload", "Notifications", "Review Request System"], "price": ["$2,500–$5,500", "$5,500–$9,000", "$9,000+"]}, {"chip": "Lessons & Coaching", "ex": "Tutors · music teachers · swim & martial-arts instructors", "name": "Lesson Inquiry & Student Starter System", "promise": "A simple system that helps families or students inquire about lessons, choose the right program, request a time, and provide basic student information upfront.", "comp": ["Business Profile", "Service & Product Menu", "Student / Parent Inquiry", "Booking Request System", "Student Detail Fields", "Notifications", "Resource / FAQ Section"], "price": ["$3,000–$5,500", "$5,500–$10,000", "$10,000+"]}, {"chip": "Wellness & Health", "ex": "Physios · chiropractors · doulas · wellness clinics", "name": "Intake & Booking Starter System", "promise": "A clear, professional system that helps clients understand services, request an appointment or consultation, complete basic intake steps, and access prep information.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Consultation Form", "Booking Request System", "Document Checklist / Intake", "Resource Library", "Notifications"], "price": ["$3,000–$6,000", "$6,000–$10,000", "$10,000+"]}, {"chip": "Retail & Boutiques", "ex": "Gift shops · thrift shops · boutiques · hobby shops", "name": "Local Shop Promo Starter System", "promise": "A simple local shop system that helps customers find your hours, location, featured products, promos, events, review link, and signup — without relying only on social media.", "comp": ["Business Profile", "Service & Product Menu", "Promo / Featured Products", "Signup Form", "Review Request System", "QR Code Setup", "Notifications"], "price": ["$2,000–$4,500", "$4,500–$8,000", "$8,000+"]}, {"chip": "Bookkeeping & Pro Services", "ex": "Bookkeepers · tax preparers · consultants · notaries", "name": "Professional Intake Starter System", "promise": "A professional inquiry and intake system that helps qualify leads, explain your process, collect the right information, and reduce vague calls or missing documents.", "comp": ["Business Profile", "Service & Product Menu", "Client Inquiry Form", "Document Checklist / Intake", "Resource Library / FAQ", "Notifications", "Customer Confirmation"], "price": ["$3,000–$6,000", "$6,000–$10,000", "$10,000+"]}];
+    var CHECK = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>';
+    var detail = document.getElementById('arch-detail');
+    if (!detail) return;
+    function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function render(i) {
+      var a = ARCH[i];
+      var comps = a.comp.map(function (c) {
+        return '<li class="arch-comp">' + CHECK + '<span>' + esc(c) + '</span></li>';
+      }).join('');
+      detail.innerHTML =
+        '<p class="arch-ex">' + esc(a.ex) + '</p>' +
+        '<h3 class="arch-name">' + esc(a.name) + '</h3>' +
+        '<p class="arch-promise">' + esc(a.promise) + '</p>' +
+        '<p class="arch-subhead">Ways we can help your business</p>' +
+        '<ul class="arch-components" role="list">' + comps + '</ul>';
+    }
+    var chips = document.querySelectorAll('.chip[data-arch]');
+    chips.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        chips.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+        render(parseInt(btn.getAttribute('data-arch'), 10));
+      });
+    });
+    render(0);
+  })();
+</script>
 </body>
 </html>
