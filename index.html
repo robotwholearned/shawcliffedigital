@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shawcliffe Digital — Branded Lead Capture Systems for Local Contractors &amp; Owner Operators</title>
-  <meta name="description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for local contractors and owner-operators — more leads, faster follow-up, stronger reviews." />
+  <title>Shawcliffe Digital — Branded Lead Capture Systems for Small, Independent Businesses</title>
+  <meta name="description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for small, independent businesses — more leads, faster follow-up, stronger reviews." />
   <link rel="canonical" href="https://shawcliffedigital.com" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://shawcliffedigital.com" />
-  <meta property="og:title"       content="Shawcliffe Digital — Branded Lead Capture Systems for Local Contractors &amp; Owner Operators" />
-  <meta property="og:description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for local contractors and owner-operators — more leads, faster follow-up, stronger reviews." />
+  <meta property="og:title"       content="Shawcliffe Digital — Branded Lead Capture Systems for Small, Independent Businesses" />
+  <meta property="og:description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for small, independent businesses — more leads, faster follow-up, stronger reviews." />
   <meta property="og:image"       content="https://shawcliffedigital.com/og-image.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Shawcliffe Digital — Branded Lead Capture Systems for Local Contractors &amp; Owner Operators" />
-  <meta name="twitter:description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for local contractors and owner-operators — more leads, faster follow-up, stronger reviews." />
+  <meta name="twitter:title"       content="Shawcliffe Digital — Branded Lead Capture Systems for Small, Independent Businesses" />
+  <meta name="twitter:description" content="Shawcliffe Digital builds branded lead capture and follow-up systems for small, independent businesses — more leads, faster follow-up, stronger reviews." />
   <meta name="twitter:image"       content="https://shawcliffedigital.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -644,6 +644,40 @@
       margin-left: auto; margin-right: auto;
     }
 
+    /* ─── FULL COMPONENT LIBRARY ─── */
+    .library-section {
+      max-width: 1280px; margin: 0 auto; padding: 1rem 1.5rem 5rem;
+    }
+    .library-grid {
+      margin-top: 3rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+    }
+    @media (min-width: 640px)  { .library-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .library-grid { grid-template-columns: repeat(3, 1fr); } }
+    .lib-group {
+      border: 1.5px solid var(--slate-200); border-radius: 1rem;
+      padding: 1.5rem 1.5rem 1.75rem; background: var(--white);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .lib-group-title {
+      font-family: 'Montserrat', 'Inter', sans-serif;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--blue-700);
+    }
+    .lib-list {
+      margin-top: 1rem; list-style: none;
+      display: flex; flex-direction: column; gap: 0.9rem;
+    }
+    .lib-item { display: flex; gap: 0.6rem; align-items: flex-start; }
+    .lib-item svg { flex-shrink: 0; color: var(--blue-700); margin-top: 3px; }
+    .lib-name {
+      display: block; font-size: 0.9rem; font-weight: 700;
+      color: var(--slate-950); line-height: 1.4;
+    }
+    .lib-desc {
+      display: block; margin-top: 0.15rem; font-size: 0.82rem;
+      line-height: 1.6; color: var(--slate-600);
+    }
+
     /* ─── CTA BAND ─── */
     .cta-band {
       background: var(--slate-950);
@@ -975,7 +1009,7 @@
       <div class="card-divider"></div>
       <p class="hero-tagline">
         Branded lead capture systems for
-        <span class="blue">local contractors &amp; owner operators</span>
+        <span class="blue">small &amp; independent businesses</span>
       </p>
     </div>
 
@@ -1018,13 +1052,6 @@
           <span>shawcliffedigital.com</span>
         </a>
 
-        <div class="contact-row">
-          <div class="contact-icon" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="contact-sep"></div>
-          <span>Serving Local Businesses</span>
-        </div>
       </div>
     </div>
 
@@ -1070,7 +1097,7 @@
         </div>
         <div>
           <div class="benefit-title">Look Professional</div>
-          <p class="benefit-text">Give your local business a polished digital system under your own brand.</p>
+          <p class="benefit-text">Give your business a polished digital system under your own brand.</p>
         </div>
       </div>
 
@@ -1138,8 +1165,21 @@
         </div>
       </div>
 
-      <p class="picker-note">Don't see your business? We build for most local owner-operated trades and shops — just ask.</p>
+      <p class="picker-note">Don't see your business? We build for most small, owner-run trades and shops — just ask.</p>
     </div>
+  </section>
+
+  <!-- ═══ FULL COMPONENT LIBRARY ═══ -->
+  <section id="library" class="library-section">
+    <div class="packages-intro reveal">
+      <p class="eyebrow">Everything We Can Build</p>
+      <h2>The full component library.</h2>
+      <p>Every system is assembled from these proven components. We start with what your business needs now and add more as you grow — mix and match whatever fits how you actually work.</p>
+    </div>
+
+    <div id="library-grid" class="library-grid reveal"></div>
+
+    <p class="picker-note">Not sure which pieces you need? That's what the free consultation is for — we'll map it out with you.</p>
   </section>
 
   <!-- ═══ CTA BAND ═══ -->
@@ -1162,7 +1202,7 @@
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
-    <p class="footer-tagline">Branded lead capture systems for local contractors &amp; owner operators.</p>
+    <p class="footer-tagline">Branded lead capture systems for small, independent businesses.</p>
     <p class="footer-copy">© Shawcliffe Digital</p>
   </div>
 </footer>
@@ -1374,7 +1414,7 @@
 
 <script>
   (function () {
-    var ARCH = [{"chip": "Barbers & Salons", "ex": "Barbers · hair, nail & lash techs · estheticians · massage", "name": "Booking & Review Starter System", "promise": "A simple system that helps customers see your services, request appointments, rebook, and leave reviews — without everything getting buried in texts and DMs.", "comp": ["Business Profile", "Service & Product Menu", "Booking Request System", "Notifications", "Review Request System", "Customer Confirmation"], "price": ["$2,000–$4,000", "$4,000–$7,500", "$7,500+"]}, {"chip": "Trades", "ex": "Welders · plumbers · HVAC · electricians · handymen", "name": "Quote Request Starter System", "promise": "A simple quote request system that helps customers send job details, location, urgency, and photos upfront — so you waste less time chasing basic information.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Quote Form", "Photo & File Upload", "Notifications", "Customer Confirmation", "Review Request System"], "price": ["$2,500–$5,000", "$5,000–$8,000", "$8,000+"]}, {"chip": "Cleaning & Lawn Care", "ex": "Cleaners · lawn care · snow removal · landscapers", "name": "Recurring Client Starter System", "promise": "A simple system that helps property service businesses collect inquiries, organize property details, and turn one-time jobs into recurring clients.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Request Form", "Recurring Schedule Request", "Notifications", "Property Details", "Review Request System"], "price": ["$3,000–$5,500", "$5,500–$9,000", "$9,000+"]}, {"chip": "Bakers & Food Makers", "ex": "Bakers · cake makers · meal prep · chocolatiers", "name": "Menu & Preorder Starter System", "promise": "A simple system that helps customers see your menu, understand lead times, submit preorder or custom-order requests, and get clear pickup instructions.", "comp": ["Business Profile", "Service & Product Menu", "Preorder / Order Form", "Notifications", "Customer Confirmation", "Lead Times & Policies", "Review Request System"], "price": ["$2,500–$5,000", "$5,000–$8,500", "$8,500+"]}, {"chip": "Market & Pop-Up Sellers", "ex": "Fruit stands · honey sellers · market vendors · food trucks", "name": "Live Status Starter System", "promise": "A simple live-update system that lets customers check whether you're open, where you are, what you have today, prices, and whether anything's sold out.", "comp": ["Business Profile", "Service & Product Menu", "Admin Dashboard", "Status Tracker", "Product Inventory", "Location / Pop-Up Tracker", "QR Code Setup", "Notifications"], "price": ["$3,000–$6,000", "$6,000–$9,000", "$9,000+"]}, {"chip": "Pet Services", "ex": "Groomers · pet sitters · dog walkers · trainers", "name": "Pet Booking & Intake Starter System", "promise": "A simple booking and intake system that collects customer information and key pet details — breed, size, allergies, behaviour notes, and service preferences.", "comp": ["Business Profile", "Service & Product Menu", "Booking Request System", "Pet Intake Form", "Notifications", "Pet Profile Fields", "Review Request System"], "price": ["$3,000–$5,500", "$5,500–$9,000", "$9,000+"]}, {"chip": "Auto & Repair", "ex": "Mobile mechanics · detailers · tire & small-engine repair", "name": "Vehicle Service Request Starter System", "promise": "A simple service request system that collects vehicle or equipment details, issue descriptions, photos, location, urgency, and contact info upfront.", "comp": ["Business Profile", "Service & Product Menu", "Service Request Form", "Vehicle Detail Fields", "Photo & File Upload", "Notifications", "Review Request System"], "price": ["$3,000–$5,500", "$5,500–$9,000", "$9,000+"]}, {"chip": "Photo & Events", "ex": "Photographers · DJs · videographers · florists · planners", "name": "Event Inquiry Starter System", "promise": "A simple system that helps event clients send the date, venue, package interest, guest count, budget, inspiration, and contact details in one organized inquiry.", "comp": ["Business Profile", "Service & Product Menu", "Event Inquiry Form", "Event Detail Fields", "Photo & File Upload", "Notifications", "Review Request System"], "price": ["$2,500–$5,500", "$5,500–$9,000", "$9,000+"]}, {"chip": "Lessons & Coaching", "ex": "Tutors · music teachers · swim & martial-arts instructors", "name": "Lesson Inquiry & Student Starter System", "promise": "A simple system that helps families or students inquire about lessons, choose the right program, request a time, and provide basic student information upfront.", "comp": ["Business Profile", "Service & Product Menu", "Student / Parent Inquiry", "Booking Request System", "Student Detail Fields", "Notifications", "Resource / FAQ Section"], "price": ["$3,000–$5,500", "$5,500–$10,000", "$10,000+"]}, {"chip": "Wellness & Health", "ex": "Physios · chiropractors · doulas · wellness clinics", "name": "Intake & Booking Starter System", "promise": "A clear, professional system that helps clients understand services, request an appointment or consultation, complete basic intake steps, and access prep information.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Consultation Form", "Booking Request System", "Document Checklist / Intake", "Resource Library", "Notifications"], "price": ["$3,000–$6,000", "$6,000–$10,000", "$10,000+"]}, {"chip": "Retail & Boutiques", "ex": "Gift shops · thrift shops · boutiques · hobby shops", "name": "Local Shop Promo Starter System", "promise": "A simple local shop system that helps customers find your hours, location, featured products, promos, events, review link, and signup — without relying only on social media.", "comp": ["Business Profile", "Service & Product Menu", "Promo / Featured Products", "Signup Form", "Review Request System", "QR Code Setup", "Notifications"], "price": ["$2,000–$4,500", "$4,500–$8,000", "$8,000+"]}, {"chip": "Bookkeeping & Pro Services", "ex": "Bookkeepers · tax preparers · consultants · notaries", "name": "Professional Intake Starter System", "promise": "A professional inquiry and intake system that helps qualify leads, explain your process, collect the right information, and reduce vague calls or missing documents.", "comp": ["Business Profile", "Service & Product Menu", "Client Inquiry Form", "Document Checklist / Intake", "Resource Library / FAQ", "Notifications", "Customer Confirmation"], "price": ["$3,000–$6,000", "$6,000–$10,000", "$10,000+"]}];
+    var ARCH = [{"chip": "Barbers & Salons", "ex": "Barbers · hair, nail & lash techs · estheticians · massage", "name": "Booking & Review System", "promise": "A simple system that helps customers see your services, request appointments, rebook, and leave reviews — without everything getting buried in texts and DMs.", "comp": ["Business Profile", "Service & Product Menu", "Booking Request System", "Notifications", "Review Request System", "Customer Confirmation"]}, {"chip": "Trades", "ex": "Welders · plumbers · HVAC · electricians · handymen", "name": "Quote Request System", "promise": "A simple quote request system that helps customers send job details, location, urgency, and photos upfront — so you waste less time chasing basic information.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Quote Form", "Photo & File Upload", "Notifications", "Customer Confirmation", "Review Request System"]}, {"chip": "Cleaning & Lawn Care", "ex": "Cleaners · lawn care · snow removal · landscapers", "name": "Recurring Client System", "promise": "A simple system that helps property service businesses collect inquiries, organize property details, and turn one-time jobs into recurring clients.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Request Form", "Recurring Schedule Request", "Notifications", "Property Details", "Review Request System"]}, {"chip": "Bakers & Food Makers", "ex": "Bakers · cake makers · meal prep · chocolatiers", "name": "Menu & Preorder System", "promise": "A simple system that helps customers see your menu, understand lead times, submit preorder or custom-order requests, and get clear pickup instructions.", "comp": ["Business Profile", "Service & Product Menu", "Preorder / Order Form", "Notifications", "Customer Confirmation", "Lead Times & Policies", "Review Request System"]}, {"chip": "Market & Pop-Up Sellers", "ex": "Fruit stands · honey sellers · market vendors · food trucks", "name": "Live Status System", "promise": "A simple live-update system that lets customers check whether you're open, where you are, what you have today, prices, and whether anything's sold out.", "comp": ["Business Profile", "Service & Product Menu", "Admin Dashboard", "Status Tracker", "Product Inventory", "Location / Pop-Up Tracker", "QR Code Setup", "Notifications"]}, {"chip": "Pet Services", "ex": "Groomers · pet sitters · dog walkers · trainers", "name": "Pet Booking & Intake System", "promise": "A simple booking and intake system that collects customer information and key pet details — breed, size, allergies, behaviour notes, and service preferences.", "comp": ["Business Profile", "Service & Product Menu", "Booking Request System", "Pet Intake Form", "Notifications", "Pet Profile Fields", "Review Request System"]}, {"chip": "Auto & Repair", "ex": "Mobile mechanics · detailers · tire & small-engine repair", "name": "Vehicle Service Request System", "promise": "A simple service request system that collects vehicle or equipment details, issue descriptions, photos, location, urgency, and contact info upfront.", "comp": ["Business Profile", "Service & Product Menu", "Service Request Form", "Vehicle Detail Fields", "Photo & File Upload", "Notifications", "Review Request System"]}, {"chip": "Photo & Events", "ex": "Photographers · DJs · videographers · florists · planners", "name": "Event Inquiry System", "promise": "A simple system that helps event clients send the date, venue, package interest, guest count, budget, inspiration, and contact details in one organized inquiry.", "comp": ["Business Profile", "Service & Product Menu", "Event Inquiry Form", "Event Detail Fields", "Photo & File Upload", "Notifications", "Review Request System"]}, {"chip": "Lessons & Coaching", "ex": "Tutors · music teachers · swim & martial-arts instructors", "name": "Lesson Inquiry & Student System", "promise": "A simple system that helps families or students inquire about lessons, choose the right program, request a time, and provide basic student information upfront.", "comp": ["Business Profile", "Service & Product Menu", "Student / Parent Inquiry", "Booking Request System", "Student Detail Fields", "Notifications", "Resource / FAQ Section"]}, {"chip": "Wellness & Health", "ex": "Physios · chiropractors · doulas · wellness clinics", "name": "Intake & Booking System", "promise": "A clear, professional system that helps clients understand services, request an appointment or consultation, complete basic intake steps, and access prep information.", "comp": ["Business Profile", "Service & Product Menu", "Inquiry / Consultation Form", "Booking Request System", "Document Checklist / Intake", "Resource Library", "Notifications"]}, {"chip": "Retail & Boutiques", "ex": "Gift shops · thrift shops · boutiques · hobby shops", "name": "Local Shop Promo System", "promise": "A simple local shop system that helps customers find your hours, location, featured products, promos, events, review link, and signup — without relying only on social media.", "comp": ["Business Profile", "Service & Product Menu", "Promo / Featured Products", "Signup Form", "Review Request System", "QR Code Setup", "Notifications"]}, {"chip": "Bookkeeping & Pro Services", "ex": "Bookkeepers · tax preparers · consultants · notaries", "name": "Professional Intake System", "promise": "A professional inquiry and intake system that helps qualify leads, explain your process, collect the right information, and reduce vague calls or missing documents.", "comp": ["Business Profile", "Service & Product Menu", "Client Inquiry Form", "Document Checklist / Intake", "Resource Library / FAQ", "Notifications", "Customer Confirmation"]}];
     var CHECK = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>';
     var detail = document.getElementById('arch-detail');
     if (!detail) return;
@@ -1400,6 +1440,66 @@
       });
     });
     render(0);
+  })();
+</script>
+
+<script>
+  // ── Full component library ──
+  (function () {
+    var LIB = [
+      { group: "The foundation", items: [
+        ["Business Profile", "Your hours, services, contact, and service area in one branded place."],
+        ["Service & Product Menu", "A clear list of what you offer, with prices or starting points."],
+        ["QR Code Setup", "Printed codes that send customers straight to your system."]
+      ]},
+      { group: "Getting new customers in", items: [
+        ["Inquiry / Quote Form", "A simple form that collects the job details you need upfront."],
+        ["Booking Request System", "Let customers request appointments without the back-and-forth."],
+        ["Photo & File Upload", "Customers attach photos or documents so you can quote accurately."],
+        ["Payments / Deposits", "Take deposits or payments to lock in the job."]
+      ]},
+      { group: "Staying organized", items: [
+        ["Admin Dashboard", "One place to see and manage everything coming in."],
+        ["Customer Database", "Keep every customer's details and history in one list."],
+        ["Notifications", "Instant alerts to you and confirmations to your customer."],
+        ["Status Tracker", "Show whether you're open, booked, or sold out — updated in seconds."]
+      ]},
+      { group: "Selling & scheduling", items: [
+        ["Product Inventory", "Show what's available today and mark items sold out."],
+        ["Recurring Schedule", "Turn one-time jobs into repeat, scheduled work."],
+        ["Location / Pop-Up Tracker", "Tell customers where you'll be today."],
+        ["Packages / Memberships", "Sell bundles, memberships, or plans."]
+      ]},
+      { group: "Keeping customers coming back", items: [
+        ["Review Request System", "Automatically ask happy customers for reviews."],
+        ["Loyalty / Rewards / Referrals", "Reward repeat customers and the people they send you."],
+        ["Resource Library / FAQ", "Share guides and prep info so you field fewer questions."]
+      ]},
+      { group: "Details for your trade", items: [
+        ["Document Checklist / Intake", "Collect the right documents before the work starts."],
+        ["Pet Profiles", "Capture breed, size, allergies, and behaviour notes."],
+        ["Vehicle Profiles", "Capture make, model, and the issue upfront."],
+        ["Property Profiles", "Store property details for recurring service."],
+        ["Student / Progress Profiles", "Track student info and progress over time."]
+      ]},
+      { group: "Growth & automation", items: [
+        ["Advanced Analytics", "See what's driving leads and where they come from."],
+        ["Automation / AI Workflows", "Automate follow-ups and multi-step workflows as you scale."]
+      ]}
+    ];
+    var CHECK = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>';
+    var grid = document.getElementById('library-grid');
+    if (!grid) return;
+    function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    grid.innerHTML = LIB.map(function (g) {
+      var items = g.items.map(function (it) {
+        return '<li class="lib-item">' + CHECK +
+          '<div><span class="lib-name">' + esc(it[0]) + '</span>' +
+          '<span class="lib-desc">' + esc(it[1]) + '</span></div></li>';
+      }).join('');
+      return '<div class="lib-group"><p class="lib-group-title">' + esc(g.group) +
+        '</p><ul class="lib-list" role="list">' + items + '</ul></div>';
+    }).join('');
   })();
 </script>
 </body>
