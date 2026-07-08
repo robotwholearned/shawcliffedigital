@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="129" height="169" viewBox="0 0 129 169" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="176" height="176" viewBox="0 0 176 176" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Shawcliffe Digital Logo</title>
   <desc id="desc">A stylized interlocking S logo with the blue upper shape mirroring the dark navy lower shape.</desc>
-  <path d="M 67 32 L 24 59 L 24 96 L 60 118 L 66 118 L 66 105 L 38 87 L 38 66 L 65 49 L 93 65 L 108 58 Z" fill="#114AC4"/>
-  <path d="M 72 74 L 66 74 L 66 87 L 94 105 L 94 126 L 67 143 L 39 127 L 24 134 L 65 160 L 108 133 L 108 96 Z" fill="#040F23"/>
+  <g transform="translate(22 -8)">
+    <path d="M 67 32 L 24 59 L 24 96 L 60 118 L 66 118 L 66 105 L 38 87 L 38 66 L 65 49 L 93 65 L 108 58 Z" fill="#114AC4"/>
+    <path d="M 72 74 L 66 74 L 66 87 L 94 105 L 94 126 L 67 143 L 39 127 L 24 134 L 65 160 L 108 133 L 108 96 Z" fill="#040F23"/>
+  </g>
 </svg>
