@@ -146,6 +146,20 @@
 
     .btn-dark:hover { background: var(--blue-800); }
 
+    /* Keep the header CTA on-screen on small phones */
+    @media (max-width: 480px) {
+      .header-inner { padding: 1.25rem 0.75rem; gap: 0.75rem; }
+      .btn-dark { padding: 0.5rem 0.85rem; font-size: 0.75rem; }
+      .logo-lockup { gap: 0.6rem; }
+      .logo-name { font-size: 0.95rem; letter-spacing: 0.1em; }
+      .logo-sub { font-size: 0.58rem; letter-spacing: 0.24em; }
+    }
+
+    /* Very narrow screens: mark only */
+    @media (max-width: 360px) {
+      .logo-words { display: none; }
+    }
+
     /* ─── HERO ─── */
     .hero {
       width: 100%;
@@ -991,7 +1005,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <a href="#" class="btn-dark" data-modal="booking">Book a Free Consultation</a>
+    <a href="#" class="btn-dark" data-modal="booking">See What We Can Do</a>
   </div>
 </header>
 
@@ -1021,7 +1035,7 @@
 
       <div class="hero-btns">
         <a href="#" class="btn-blue" data-modal="booking">
-          Book a Free Consultation
+          See What We Can Do
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
         <a href="#packages" class="btn-outline">View Packages</a>
@@ -1160,7 +1174,7 @@
       <div class="picker-panel pkg-card featured" role="tabpanel">
         <div id="arch-detail"></div>
         <div class="picker-cta">
-          <a href="#" class="btn-blue" data-modal="booking">Book a Free Consultation</a>
+          <a href="#" class="btn-blue" data-modal="booking">See What We Can Do</a>
           <span class="picker-caretext">Not sure which fits? We'll map it out with you.</span>
         </div>
       </div>
@@ -1191,7 +1205,7 @@
         <p class="cta-p">We'll walk you through the features that make sense for your business, including quote requests, reminders, reviews, and customer follow-up.</p>
       </div>
       <a href="#" class="btn-white" data-modal="booking">
-        Book a Free Consultation
+        See What We Can Do
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
     </div>
